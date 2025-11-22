@@ -1,6 +1,6 @@
 import { Outlet, useNavigate } from 'react-router-dom';
 import { Layout as AntLayout, Avatar, Dropdown, type MenuProps, Space, Typography } from 'antd';
-import { LogoutOutlined, UserOutlined, CheckSquareOutlined } from '@ant-design/icons';
+import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
 import { useAuthStore } from '../store/useAuthStore';
 
 const { Header, Content } = AntLayout;
