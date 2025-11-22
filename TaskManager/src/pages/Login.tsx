@@ -19,11 +19,17 @@ export const Login = () => {
         setError(null);
         setLoading(true);
         try {
+            console.log('Attempting login with:', values);
             const response = await axios.post('/api/login', values);
+            console.log('Login response:', response);
             login(response.data.user, response.data.token);
             navigate('/');
-        } catch (err) {
-            setError('Invalid username or password');
+        } catch (err: any) {
+            console.error('Login error:', err);
+            const errorMessage = err.response?.status === 401
+                ? 'Invalid username or password'
+                : err.message || 'Failed to login';
+            setError(errorMessage);
         } finally {
             setLoading(false);
         }

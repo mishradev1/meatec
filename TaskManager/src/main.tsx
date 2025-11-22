@@ -5,9 +5,10 @@ import './index.css'
 import App from './App.tsx'
 
 async function enableMocking() {
-  if (!import.meta.env.DEV) {
-    return
-  }
+  // Always enable mocking for this demo application as there is no real backend.
+  // if (!import.meta.env.DEV) {
+  //   return
+  // }
 
   const { worker } = await import('./mocks/browser')
 
